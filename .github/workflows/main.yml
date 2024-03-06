@@ -4,6 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@HEAD
+    - run: chmod -R a=u .
     - uses: docker://trini/u-boot-gitlab-ci-runner:jammy-20240125-12Feb2024
       with:
         args: sh -c "id && make qemu_arm64_defconfig && make"
