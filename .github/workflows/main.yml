@@ -6,4 +6,4 @@ jobs:
     - uses: actions/checkout@HEAD
     - uses: docker://trini/u-boot-gitlab-ci-runner:jammy-20240125-12Feb2024
       with:
-        args: tools/buildman/buildman
+        args: sh -c "make qemu_arm64_defconfig && make"
