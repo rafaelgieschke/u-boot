@@ -1,0 +1,9 @@
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@HEAD
+    - uses: docker://trini/u-boot-gitlab-ci-runner
+      with:
+        args: tools/buildman/buildman
